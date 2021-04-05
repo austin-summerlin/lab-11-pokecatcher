@@ -24,13 +24,13 @@ export function encounterPokemon(pokemon) {
     // - get the pokedex
     const pokedex = getPokedex();
     // - ask "is this pokemon already in there"
-    const matchingPokemon = findById(pokemon);
+    const matchingPokedexItem = findById(pokedex, pokemon.pokemon);
 
-    if (matchingPokemon) {
-        matchingPokemon.encountered++;
+    if (matchingPokedexItem) {
+        matchingPokedexItem.encountered++;
     } else {
         const newPokedexItem = {
-            name: pokemon.pokemon,
+            id: pokemon.pokemon,
             captured: 0,
             encountered: 1
         };
@@ -41,17 +41,16 @@ export function encounterPokemon(pokemon) {
 
     return pokedex;
 }
-// - capture pokemon
-export function capturePokemon(pokemon) {
-    // - take in a pokemon
-    // - get the pokedex
-    const pokedex = getPokedex();
-    // - ask "is this pokemon already in there"
-    const matchingPokemon = findById(pokemon);
 
-    if (matchingPokemon) {
-        matchingPokemon.captured++;
-    }
+export function capturePokemon(pokemon) {
+
+    const pokedex = getPokedex();
+
+    const matchingPokemon = findById(pokedex, pokemon.pokemon);
+
+
+    matchingPokemon.captured++;
+
     setPokedex(pokedex);
 
     return pokedex;
