@@ -1,9 +1,33 @@
 ## Making a plan
-1) Make a drawing of your app. Simple "wireframes"
-2) Once you have a drawing, name the HTML elements you'll need to realize your vision
-3) For each HTML element ask: Why do I need this?
-    - This is your pseudocode
-4) Once we know _why_ we need each element, think about how to implement the "Why" as a "How"
-5) Is there some state we need to initialize?
-6) Find all the 'events' (user clicks, form submit, etc) in your app. Ask one by one, "What happens when" for each of these events.
-7) Think about how to validate each of your steps
+1. HTML Needed
+    - Radio Buttons for Pokemon
+    - Pokeball Button
+2. State
+    - Encounter, captured for each pokemon
+        - const pokedex = []
+        - let captures = 0
+3. Events
+    - On Click
+        - Add encountered pokemon to cart
+        - send selected pokemon to pokedex
+            - figure out which pokemon is selected
+            - grab our pokedex from local storage
+            - increment caprture quantity
+            - if captures state is 10 redirect
+    - On Load
+        - Generate 3 Pokemon
+        - add the to encountered
+4. Functions
+    - Generate 3 new pokemon
+        - start w/ raw array of pokedata
+        - math.random to get 3 random array indexes(unique)
+        - use 3 indexes to get 3 pokemon
+        - increment encountered for all
+        - is it in pokedex yet?
+            - if not, { pokemon: , captured: 0, increment: 1}
+        - Capture pokemon (selected)
+            - grab pokedex from local storage
+5. Local Storage Utils
+    - get pokedex
+    - encounter pokemon
+    - capture pokemon
