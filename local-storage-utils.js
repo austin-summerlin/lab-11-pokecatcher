@@ -1,5 +1,5 @@
 import { findById } from './utils.js';
-
+let captured = 1;
 const POKEDEX = 'POKEDEX';
 
 // - get pokedex
@@ -45,11 +45,12 @@ export function encounterPokemon(pokemon) {
 export function capturePokemon(pokemon) {
 
     const pokedex = getPokedex();
-
+    const caughtPoke = document.querySelector('#pokeCaught');
     const matchingPokemon = findById(pokedex, pokemon.pokemon);
 
 
     matchingPokemon.captured++;
+    caughtPoke.textContent = `Total Pokemon Caught: ${captured++}`;
 
     setPokedex(pokedex);
 
