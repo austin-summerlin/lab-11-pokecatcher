@@ -56,9 +56,10 @@ export function capturePokemon(pokemon) {
     setPokedex(pokedex);
 
     if (captured === 11) {
-        button.disabled = true;
-        window.location.href = '../results/index.html';
         alert('Congratulations! You Have Caught 10 Pokemon. Please See Profesor Oak for Further Instructions.');
+        button.disabled = true;
+        window.location.href = 'results/index.html';
+
     }
 
     return pokedex;
