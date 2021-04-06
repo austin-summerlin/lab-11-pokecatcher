@@ -21,6 +21,7 @@
     - Generate 3 new pokemon
         - start w/ raw array of pokedata
         - math.random to get 3 random array indexes(unique)
+            - while they're not unique, get new numbers
         - use 3 indexes to get 3 pokemon
         - increment encountered for all
         - is it in pokedex yet?
