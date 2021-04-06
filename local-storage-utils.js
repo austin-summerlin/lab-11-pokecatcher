@@ -1,6 +1,7 @@
 import { findById } from './utils.js';
 let captured = 1;
 const POKEDEX = 'POKEDEX';
+const button = document.querySelector('button');
 
 // - get pokedex
 export function getPokedex() {
@@ -53,6 +54,10 @@ export function capturePokemon(pokemon) {
     caughtPoke.textContent = `Total Pokemon Caught: ${captured++}`;
 
     setPokedex(pokedex);
+
+    if (captured === 11) {
+        button.disabled = true;
+    }
 
     return pokedex;
 }

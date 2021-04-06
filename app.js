@@ -2,6 +2,10 @@ import { generateThreePokemon } from './data-utils.js';
 import { capturePokemon } from './local-storage-utils.js';
 import { findPokemonByName } from './utils.js';
 
+let captured = 0;
+
+const message = document.getElementById('message');
+
 const button = document.querySelector('button');
 
 function createPokemonDom() {
@@ -42,6 +46,12 @@ button.addEventListener('click', () => {
     const pokeObject = findPokemonByName(selectedRadio.value);
     capturePokemon(pokeObject);
     createPokemonDom();
+
+    if (captured === 10) {
+        button.disabled = true;
+        message.textContent = 'Great Job! You caught 10 Pokemon';
+
+    }
 
 
 });
