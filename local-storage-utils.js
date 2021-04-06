@@ -28,12 +28,12 @@ export function encounterPokemon(pokemon) {
     const matchingPokedexItem = findById(pokedex, pokemon.pokemon);
 
     if (matchingPokedexItem) {
-        matchingPokedexItem.encountered++;
+        matchingPokedexItem.encounterd++;
     } else {
         const newPokedexItem = {
             id: pokemon.pokemon,
             captured: 0,
-            encountered: 1
+            encounterd: 1
         };
 
         pokedex.push(newPokedexItem);
@@ -62,20 +62,4 @@ export function capturePokemon(pokemon) {
     }
 
     return pokedex;
-}
-
-export function createTableRow(pokedex) {
-    const tr = document.createElement('tr');
-
-    const tdPokemon = document.createElement('td');
-    tdPokemon.textContent = pokedex.id;
-
-    const tdEncountered = document.createElement('td');
-    tdEncountered.textContent = pokedex.encountered;
-
-    const tdCaptured = document.createElement('td');
-    tdCaptured.textContent = pokedex.captured;
-
-    tr.append(tdPokemon, tdEncountered, tdCaptured);
-    return tr;
 }

@@ -9,21 +9,16 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/home.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.2/dist/chart.min.js"></script>
     <title>Document</title>
 </head>
 
 <body>
     <main>
         <section>
-            <h1 id='pokedexData'>Pokedex Data:</h1>
-            <table>
-                <thead>
-                    <th>Pokemon:</th>
-                    <th>Encountered:</th>
-                    <th>Captured:</th>
-                </thead>
-            </table>
-
+            <div>
+                <canvas id="myChart" width="400" height="400"></canvas>
+            </div>
         </section>
         <button id='playAgain'>Play Again?</button>
 
